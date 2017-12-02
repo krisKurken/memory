@@ -8,12 +8,14 @@
 <body>
   <div class="button">Replay</div>
   <div class="frame"></div>
-
-
   <script src="functions/functions.js"></script>
   <script>
     InitGame();
     ReplayBtn();
+    // console.log(document.querySelector(".frame").childNodes[0]);
+    if (IsGameDone()) {
+      console.log("you are done");
+    }
   </script>
 </body>
 </html>

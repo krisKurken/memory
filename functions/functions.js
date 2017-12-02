@@ -1,4 +1,4 @@
-
+"use strict"
 /**
 * InitGame - Creates an array with all the possible values of cards
 * and calls InitCard() with a random element from the array
@@ -6,7 +6,7 @@
 * @return {none}
 */
 function InitGame(){
-  cards = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7];
+  const cards = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7];
   for (var i = 0; i < 16; i++) {
     InitCard(cards.splice(Math.floor(Math.random()*cards.length), 1));
   }
@@ -19,7 +19,7 @@ function InitGame(){
 * @return {none}
 */
 function InitCard(randomCard){
-  card = document.createElement("div");
+  const card = document.createElement("div");
   card.setAttribute("class", "card");
   card.setAttribute("data-card", randomCard);
   card.setAttribute("data-active", 0);
@@ -50,7 +50,7 @@ function ReplayBtn(){
 * @return {func} - Function for initializing a new game.
 */
 function InitNewGame(){
-  frame = document.querySelector(".frame");
+  const frame = document.querySelector(".frame");
   while (frame.firstChild) {
     frame.removeChild(frame.firstChild);
   }
@@ -101,4 +101,18 @@ function SetColor(card){
     default:
       console.log("SetColor function does not work");
   }
+}
+
+function CompareCards(card1, card2){
+  return card1.getAttribute('data-card') === card2.getAttribute('data-card');
+}
+
+function IsGameDone(){
+  const frame = document.querySelector(".frame").childNodes;
+  for (var i = 0; i < frame.length; i++) {
+    if (frame[i].getAttribute('data-active') === "0") {
+      return false;
+    }
+  }
+  return true;
 }
