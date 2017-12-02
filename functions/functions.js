@@ -60,7 +60,7 @@ function InitNewGame(){
 function ShowCard(){
   console.log("Card: " + this.getAttribute('data-card'));        //test
   SetColor(this);
-  console.log("Is active:" + this.getAttribute('data-active'));      //test
+  console.log("Is active: " + this.getAttribute('data-active'));      //test
 }
 
 function SetColor(card){

@@ -22,7 +22,7 @@ body{
   border-color: DarkCyan;
   margin: 1px;
 }
-.card[data-card='0'],[data-active='0'] {
+.card[data-card='0'], [data-active='0'] {
   background-color: cyan;
 }
 .card[data-card='1'],[data-active='0'] {
