@@ -19,6 +19,7 @@ body{
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
+  align-self: center;
   border-radius: 3%;
   margin: 1%;
 }
@@ -26,16 +27,19 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 10px;
   cursor: pointer;
   border-color: black;
   border-width: 1px;
   border-style: solid;
-  width: 60px;
-  height: 60px;
-  text-align: center;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background-color: #007272;
   color: black;
+  font-weight: bold;
+  font-family:monospace;
+  font-size: 20px;
 }
 .card{
   height: 23%;
@@ -45,40 +49,36 @@ body{
   border-color: black;
   margin: 5px;
   border-radius: 10%;
+  transition: 1s;
 }
 .card[data-active="0"]{
   background-color: #007272;
   opacity: 0.89;
 }
+.card[data-active="1"]{
+  background-size: 100% 100%;
+}
 .card[data-card='8'][data-active='1'] {
   background-image: url("../resources/archer_archer.jpg");
-  background-size: 100% 100%;
 }
 .card[data-card='1'][data-active='1'] {
   background-image: url("../resources/archer_lana.jpg");
-  background-size: 100% 100%;
 }
 .card[data-card='2'][data-active='1'] {
   background-image: url("../resources/archer_cyril.jpg");
-  background-size: 100% 100%;
 }
 .card[data-card='3'][data-active='1'] {
   background-image: url("../resources/archer_woodhouse.jpg");
-  background-size: 100% 100%;
 }
 .card[data-card='4'][data-active='1'] {
   background-image: url("../resources/archer_pam.jpg");
-  background-size: 100% 100%;
 }
 .card[data-card='5'][data-active='1'] {
   background-image: url("../resources/archer_krieger.jpg");
-  background-size: 100% 100%;
 }
 .card[data-card='6'][data-active='1'] {
   background-image: url("../resources/archer_malory.jpeg");
-  background-size: 100% 100%;
 }
 .card[data-card='7'][data-active='1'] {
   background-image: url("../resources/archer_cheryl.jpg");
-  background-size: 100% 100%;
 }
