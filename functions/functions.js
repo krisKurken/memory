@@ -34,7 +34,7 @@ function InitCard(randomCard){
 * @return {none}
 */
 function AddListener(card){
-  card.addEventListener('click', HandleCard);
+  card.addEventListener("click", HandleCard);
 }
 
 /**
@@ -43,7 +43,7 @@ function AddListener(card){
 * @return {none}
 */
 function ReplayBtn(){
-  document.querySelector(".button").addEventListener('click', InitNewGame);
+  document.querySelector(".button").addEventListener("click", InitNewGame);
 }
 
 /**
@@ -59,13 +59,28 @@ function InitNewGame(){
 }
 
 function HandleCard(){
-  SetColor(this);
-  this.setAttribute("data-flipped", "1");
-  console.log(NumOfCardsFlipped());
+  if (NumOfCardsFlipped() >= 2) {
+    UnflipCard();
+  }
+  FlipCard(this);
 }
-function SetColor(card){
-  card.setAttribute('data-active', '1');
+
+function FlipCard(card){
+  card.setAttribute("data-active", "1");
+  card.setAttribute("data-flipped", "1");
 }
+
+function UnflipCard(){
+  const cards = document.querySelector(".frame").childNodes;
+  for (var i = 0; i < cards.length; i++) {
+    if (cards[i].getAttribute("data-flipped") === "1") {
+
+      cards[i].setAttribute("data-active", "0");
+      cards[i].setAttribute("data-flipped", "0");
+    }
+  }
+}
+
 function NumOfCardsFlipped(){
   const frame = document.querySelector(".frame").childNodes;
   var counter = 0;
@@ -76,6 +91,7 @@ function NumOfCardsFlipped(){
   }
   return counter;
 }
+
 function CompareCards(card1, card2){
   return card1.getAttribute('data-card') === card2.getAttribute('data-card');
 }
@@ -83,7 +99,7 @@ function CompareCards(card1, card2){
 function IsGameDone(){
   const frame = document.querySelector(".frame").childNodes;
   for (var i = 0; i < frame.length; i++) {
-    if (frame[i].getAttribute('data-active') === "0") {
+    if (frame[i].getAttribute("data-active") === "0") {
       return false;
     }
   }
