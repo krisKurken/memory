@@ -6,7 +6,7 @@
 * @return {none}
 */
 function InitGame(){
-  const cards = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7];
+  const cards = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
   for (var i = 0; i < 16; i++) {
     InitCard(cards.splice(Math.floor(Math.random()*cards.length), 1));
   }
@@ -22,7 +22,8 @@ function InitCard(randomCard){
   const card = document.createElement("div");
   card.setAttribute("class", "card");
   card.setAttribute("data-card", randomCard);
-  card.setAttribute("data-active", 0);
+  card.setAttribute("data-active", "0");
+  card.setAttribute("data-flipped", "0");
   AddListener(card);
   document.querySelector(".frame").append(card);
 }
@@ -33,7 +34,7 @@ function InitCard(randomCard){
 * @return {none}
 */
 function AddListener(card){
-  card.addEventListener('click', ShowCard);
+  card.addEventListener('click', HandleCard);
 }
 
 /**
@@ -57,52 +58,24 @@ function InitNewGame(){
   return InitGame();
 }
 
-function ShowCard(){
-  console.log("Card: " + this.getAttribute('data-card'));        //test
+function HandleCard(){
   SetColor(this);
-  console.log("Is active: " + this.getAttribute('data-active'));      //test
+  this.setAttribute("data-flipped", "1");
+  console.log(NumOfCardsFlipped());
 }
-
 function SetColor(card){
-  switch (card.getAttribute('data-card')) {
-    case "0":
-      card.style.backgroundColor = "red";
-      card.setAttribute('data-active', '1');
-    break;
-    case "1":
-      card.style.backgroundColor = "orange";
-      card.setAttribute('data-active', '1');
-    break;
-    case "2":
-      card.style.backgroundColor = "brown";
-      card.setAttribute('data-active', '1');
-    break;
-    case "3":
-      card.style.backgroundColor = "purple";
-      card.setAttribute('data-active', '1');
-    break;
-    case "4":
-      card.style.backgroundColor = "pink";
-      card.setAttribute('data-active', '1');
-    break;
-    case "5":
-      card.style.backgroundColor = "blue";
-      card.setAttribute('data-active', '1');
-    break;
-    case "6":
-      card.style.backgroundColor = "yellow";
-      card.setAttribute('data-active', '1');
-    break;
-    case "7":
-      card.style.backgroundColor = "green";
-      card.setAttribute('data-active', '1');
-    break;
-
-    default:
-      console.log("SetColor function does not work");
-  }
+  card.setAttribute('data-active', '1');
 }
-
+function NumOfCardsFlipped(){
+  const frame = document.querySelector(".frame").childNodes;
+  var counter = 0;
+  for (var i = 0; i < frame.length; i++) {
+    if (frame[i].dataset.flipped === "1") {
+      counter++;
+    }
+  }
+  return counter;
+}
 function CompareCards(card1, card2){
   return card1.getAttribute('data-card') === card2.getAttribute('data-card');
 }
