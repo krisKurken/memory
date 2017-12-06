@@ -1,55 +1,27 @@
 "use strict"
-/**
-* InitGame - Creates an array with all the possible values of cards
-* and calls InitCard() with a random element from the array
-* which it upon the call removes from the array.
-* @return {none}
-*/
+//Initierar spelet
 function InitGame(){
   const cards = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
   for (var i = 0; i < 16; i++) {
     InitCard(cards.splice(Math.floor(Math.random()*cards.length), 1));
   }
+  document.querySelector(".button").addEventListener("click", InitNewGame);
 }
-
-/**
-* InitCard - Creates and sets attributes for a div element called "card".
-* The card element is then appended as a child to the frame element.
-* @param  {int} randomCard - Data-card type generated in InitGame().
-* @return {none}
-*/
+//Initierar varje kort
 function InitCard(randomCard){
   const card = document.createElement("div");
   card.setAttribute("class", "card");
-  card.setAttribute("data-card", randomCard);
-  card.setAttribute("data-active", "0");
-  card.setAttribute("data-flipped", "0");
-  AddListener(card);
+  card.dataset.card = randomCard;
+  card.dataset.active = 0;
+  card.dataset.flipped = 0;
+  card.addEventListener("click", HandleCard);
   document.querySelector(".frame").append(card);
 }
-
-/**
-* AddListener - Adds an eventlistener to the card element.
-* @param  {node} card - Div element generated in InitCard().
-* @return {none}
-*/
-function AddListener(card){
-  card.addEventListener("click", HandleCard);
-}
-
-/**
-* ReplayBtn - Adds an eventlistener to the element with class button which
-* calls InitNewGame().
-* @return {none}
-*/
-function ReplayBtn(){
-  document.querySelector(".button").addEventListener("click", InitNewGame);
-}
-
-/**
-* InitNewGame - Removes current game board and calls InitGame().
-* @return {func} - Function for initializing a new game.
-*/
+// //Initierar ett nytt spel via en en knapp
+// function ReplayBtn(){
+//   document.querySelector(".button").addEventListener("click", InitNewGame);
+// }
+//Tar bort föregående bräde och startar ett nytt spel
 function InitNewGame(){
   const frame = document.querySelector(".frame");
   while (frame.firstChild) {
@@ -57,45 +29,47 @@ function InitNewGame(){
   }
   return InitGame();
 }
-
+//Hanterar vad som händer när man klickar på ett kort
 function HandleCard(){
-  if (NumOfCardsFlipped() >= 2) {
-    UnflipCard();
+  if (IsNotPair()) {
+    UnflipCards();
   }
   FlipCard(this);
 }
 
-function FlipCard(card){
-  card.setAttribute("data-active", "1");
-  card.setAttribute("data-flipped", "1");
-}
-
-function UnflipCard(){
-  const cards = document.querySelector(".frame").childNodes;
-  for (var i = 0; i < cards.length; i++) {
-    if (cards[i].getAttribute("data-flipped") === "1") {
-
-      cards[i].setAttribute("data-active", "0");
-      cards[i].setAttribute("data-flipped", "0");
-    }
-  }
-}
-
-function NumOfCardsFlipped(){
+//kollar om det är ett par bland de flippade korten
+function IsNotPair(){
   const frame = document.querySelector(".frame").childNodes;
-  var counter = 0;
+  var temp = [];
   for (var i = 0; i < frame.length; i++) {
     if (frame[i].dataset.flipped === "1") {
-      counter++;
+      temp.push(frame[i]);
+      if (temp.length >=2 && temp[0].dataset.card === temp[1].dataset.card) {
+        HandlePair(temp[0], temp[1]);
+        return false;
+      }
+      else if(temp.length >=2){
+        return true;
+      }
     }
   }
-  return counter;
+  return false;
 }
 
-function CompareCards(card1, card2){
-  return card1.getAttribute('data-card') === card2.getAttribute('data-card');
+function HandlePair(card1, card2){
+  card1.dataset.flipped = 0;
+  card2.dataset.flipped = 0;
+  card1.removeEventListener("click", HandleCard);
+  card2.removeEventListener("click", HandleCard);
 }
 
+//Visar kortet
+function FlipCard(card){
+  card.dataset.active = 1;
+  card.dataset.flipped = 1;
+}
+
+//Kollar om spelet är klart
 function IsGameDone(){
   const frame = document.querySelector(".frame").childNodes;
   for (var i = 0; i < frame.length; i++) {
@@ -104,4 +78,15 @@ function IsGameDone(){
     }
   }
   return true;
+}
+
+//Flippar tillbaka alla flippade kort på brädet
+function UnflipCards(){
+  const cards = document.querySelector(".frame").childNodes;
+  for (var i = 0; i < cards.length; i++) {
+    if (cards[i].dataset.flipped === "1") {
+      cards[i].dataset.active = 0;
+      cards[i].dataset.flipped = 0;
+    }
+  }
 }
