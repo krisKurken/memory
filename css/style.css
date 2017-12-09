@@ -1,20 +1,46 @@
 body{
   margin: 0;
 }
+.startBtn{
+  position: absolute;
+  cursor: pointer;
+  width: 200px;
+  height: 100px;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  color: black;
+  font-weight: bold;
+  font-family:monospace;
+  font-size: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: #007272;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 2;
+  opacity: 0.89;
+}
+.startBtn p{
+  opacity: 1;
+}
 .wrapper{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url("../resources/archer_background.jpg");
+  background-image: url("../resources/archer_background1.jpg");
   background-position: center;
   background-size: 100% 100%;
   height: 100vh;
-  width: 100vw;
 }
-.frame{
-  height: 700px;
-  width: 700px;
+.board{
+  height: 800px;
+  width: 800px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -22,12 +48,14 @@ body{
   align-self: center;
   border-radius: 3%;
   margin: 1%;
+  transition: opacity 2s;
+  opacity: 0;
 }
 .button{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 2%;
   cursor: pointer;
   border-color: black;
   border-width: 1px;
@@ -40,20 +68,26 @@ body{
   font-weight: bold;
   font-family:monospace;
   font-size: 20px;
+  opacity: 0;
+  transition: opacity 2s;
+}
+.button p{
+  opacity: 1;
 }
 .card{
-  height: 23%;
-  width: 23%;
+  height: 22%;
+  width: 22%;
   border-style: solid;
-  border-width: 2px;
+  border-width: 0.1%;
   border-color: black;
-  margin: 5px;
+  margin: 0.3%;
   border-radius: 10%;
   transition: 1s;
 }
 .card[data-active="0"]{
   background-color: #007272;
   opacity: 0.89;
+  cursor: pointer;
 }
 .card[data-active="1"]{
   background-size: 100% 100%;
@@ -81,4 +115,29 @@ body{
 }
 .card[data-card='7'][data-active='1'] {
   background-image: url("../resources/archer_cheryl.jpg");
+}
+
+@media (max-width: 800px), (max-height: 800px) {
+  .board{
+    height: 700px;
+    width: 700px;
+  }
+}
+@media (max-width: 700px), (max-height: 700px) {
+  .board{
+    height: 600px;
+    width: 600px;
+  }
+}
+@media (max-width: 600px), (max-height: 600px) {
+  .board{
+    height: 500px;
+    width: 500px;
+  }
+}
+@media (max-width: 500px), (max-height: 500px) {
+  .board{
+    height: 400px;
+    width: 400px;
+  }
 }
