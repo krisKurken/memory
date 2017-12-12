@@ -9,8 +9,11 @@
     - Open index.html in your web browser of choice(chrome is recommended).
     - And enjoy!
 
+### License
+    -
+
 ### Tested by
-    - Joakim Sjöbäck.
+    Joakim Sjöbäck.
 
 ### Author
-    - Kristian Liljander Kurki
+    Kristian Liljander Kurki
