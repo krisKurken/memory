@@ -1,5 +1,6 @@
-#MEMORY GAME
-    - Create a simple newsfeed
+# MEMORY GAME
+    - Theme -> Archer!
+    
 
 ## Assignment specifications
     - The newsfeed should contain posts from five different authors.
