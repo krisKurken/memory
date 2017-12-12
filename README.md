@@ -26,3 +26,7 @@
 
 ### Author
     - Kristian Liljander Kurki
+=======
+# MEMORY
+An awesome memory game!
+>>>>>>> 1498ad5f9a6180236f364e93523d80a4a07db3b1
