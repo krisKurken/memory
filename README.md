@@ -1,5 +1,4 @@
 # MEMORY GAME
-    - Theme -> Archer!
     [<img src="https://media.giphy.com/media/SnEXbQepwVd96/giphy.gif" alt="07 - Fuzzy Memory" width="100%">](https://en.m.wikipedia.org/wiki/Concentration_\(game\))>
 
 ## Assignment specifications
