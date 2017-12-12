@@ -1,2 +1,2 @@
-# memory
+# MEMORY
 An awesome memory game!
