@@ -10,10 +10,10 @@
     - And enjoy!
 
 ### License
-    -
+    This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ### Tested by
     Joakim Sjöbäck.
 
 ### Author
-    Kristian Liljander Kurki
+    Kristian Liljander Kurki.
