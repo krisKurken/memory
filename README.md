@@ -6,7 +6,7 @@
 ## Instructions on how to run project code
     - Clone/download repository from GitHub.
     - You should keep current file structure in the downloaded/cloned map.
-    - Open index.html in your web browser of choice(chrome is recommended).
+    - Open the index.html file in your web browser of choice(chrome is recommended).
     - And enjoy!
 
 ### License
