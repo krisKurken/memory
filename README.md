@@ -1,6 +1,6 @@
 # MEMORY GAME
     - Theme -> Archer!
-    https://gph.is/XLBhAx
+    ![alt text](https://gph.is/XLBhAx)
 
 ## Assignment specifications
     - The newsfeed should contain posts from five different authors.
