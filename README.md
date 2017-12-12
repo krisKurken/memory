@@ -1,5 +1,7 @@
 # MEMORY GAME
-    [<img src="https://media.giphy.com/media/SnEXbQepwVd96/giphy.gif" alt="07 - Fuzzy Memory" width="100%">](https://en.m.wikipedia.org/wiki/Concentration_\(game\))>
+
+
+[<img src="https://i.giphy.com/xTiTnwcfFfYXTi0wLu.gif" alt="01 - Console & Dialogs" width="100%">](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ## Assignment specifications
     - The newsfeed should contain posts from five different authors.
