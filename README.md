@@ -3,16 +3,6 @@
 
 [<img src="https://media.giphy.com/media/SnEXbQepwVd96/giphy.gif" alt="01 - Console & Dialogs" width="100%">](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-## Assignment specifications
-    - The newsfeed should contain posts from five different authors.
-    - Every author should at least have two posts each.
-    - Every post should contain:
-      - Title
-      - Content
-      - Author
-      - Published date
-      - Like counter
-
 ## Instructions on how to run project code
     - Clone/download repository from GitHub.
     - You should keep current file structure in the downloaded/cloned map.
