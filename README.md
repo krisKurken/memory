@@ -1,6 +1,6 @@
 # MEMORY GAME
     - Theme -> Archer!
-    
+    https://gph.is/XLBhAx
 
 ## Assignment specifications
     - The newsfeed should contain posts from five different authors.
@@ -15,19 +15,11 @@
 ## Instructions on how to run project code
     - Clone/download repository from GitHub.
     - You should keep current file structure in the downloaded/cloned map.
-    - Download/open MAMP.
-    - Go to Preferences in MAMP and set Web Server (root directory) to the folder you just downloaded.
-    - Press "Start Servers" in MAMP.
-    - Open the index.php-file by typing localhost:8888/index.php in your browser of choice.
-    - Ps. You shold have an internet connection, since im using web-fonts.
+    - Open index.html in your web browser of choice(chrome is recommended).
+    - And enjoy!
 
 ### Tested by
-    - André Robsahm.
-    - Henrik Bielsten.
+    - Joakim Sjöbäck.
 
 ### Author
     - Kristian Liljander Kurki
-=======
-# MEMORY
-An awesome memory game!
->>>>>>> 1498ad5f9a6180236f364e93523d80a4a07db3b1
