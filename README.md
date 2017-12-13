@@ -16,6 +16,7 @@
 ### Tested by
 
     Joakim Sjöbäck.
+		Ann Edvinsson.
 
 ### Author
 
