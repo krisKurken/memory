@@ -15,9 +15,9 @@
 
 ### Tested by
 
-    * Joakim Sjöbäck.
-		* Ann Edvinsson.
+  		Joakim Sjöbäck.
+			Ann Edvinsson.
 
 ### Author
 
-    Kristian Liljander Kurki.
+  		Kristian Liljander Kurki.
