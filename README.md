@@ -14,10 +14,8 @@
   This project is licensed under the MIT License - see the [LICENSE](license.md) file for details.
 
 ### Tested by
-
-  		Joakim Sjöbäck.
-			Ann Edvinsson.
+	Joakim Sjöbäck.
+	Ann Edvinsson.
 
 ### Author
-
-  		Kristian Liljander Kurki.
+	Kristian Liljander Kurki.
